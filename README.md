@@ -9,7 +9,7 @@ Cordova android plugin for Panasonic FZ-N1
 #### Usage
 Set Event-Handler for Scan-Event
 ```
-PanasonicToughpad.onBarcodeScan('', function (res) {
+PanasonicToughpadApi.onBarcodeScan('', function (res) {
     // success
 }, function (error) {
     // error
