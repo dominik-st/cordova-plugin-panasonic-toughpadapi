@@ -1,6 +1,6 @@
 {
-  "name": "cordovapluginpanasonictoughpadapi",
-  "version": "1.0.0",
+  "name": "cordova-plugin-panasonic-toughpadapi",
+  "version": "1.0.2",
   "description": "Cordova plugin for Panasonic FZ-N1",
   "cordova": {
     "id": "cordova-plugin-panasonic-toughpadapi",
@@ -16,7 +16,7 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "author": "Dominik ",
+  "author": "Dominik Steinrücken",
   "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/dominik-st/cordova-plugin-panasonic-toughpadapi/issues"
