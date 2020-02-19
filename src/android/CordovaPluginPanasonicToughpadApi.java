@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Cpro Industry.
+ * Copyright 2019 Dominik Steinrücken
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,9 +84,14 @@ public class CordovaPluginPanasonicToughpadApi extends CordovaPlugin implements 
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
-        this.barcodeListener.destroy();
-        ToughpadApi.destroy();
+    	try {
+            super.onDestroy();
+        	this.barcodeListener.destroy();
+        	ToughpadApi.destroy();
+    	}
+        catch (RuntimeException e) {
+            Log.e(LOG_TAG, e.getMessage(), e);
+        }
     }
 
 

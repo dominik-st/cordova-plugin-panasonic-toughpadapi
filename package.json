@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-panasonic-toughpadapi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cordova plugin for Panasonic FZ-N1",
   "cordova": {
     "id": "cordova-plugin-panasonic-toughpadapi",
