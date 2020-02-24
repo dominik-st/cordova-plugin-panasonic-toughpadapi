@@ -20,7 +20,7 @@
     <name>CordovaPluginPanasonicToughpadApi</name>
 	
 	<description>PanasonicToughpadApi Plugin</description>
-    <keywords>cordova,Toughpad SDK, Panasonic </keywords>
+    <keywords>cordova,Toughpad SDK, Panasonic</keywords>
  
 	
     <js-module name="CordovaPluginPanasonicToughpadApi" src="www/CordovaPluginPanasonicToughpadApi.js">
