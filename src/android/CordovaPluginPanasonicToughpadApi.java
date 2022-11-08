@@ -49,7 +49,7 @@ public class CordovaPluginPanasonicToughpadApi extends CordovaPlugin implements 
 
     private static final String LOG_TAG = "cpro.ToughpadApiPlugin";
     private ToughpadApiBarcodeListener barcodeListener;
-
+    private CallbackContext _callbackContext;
 
     public CordovaPluginPanasonicToughpadApi() {
     }
@@ -94,6 +94,33 @@ public class CordovaPluginPanasonicToughpadApi extends CordovaPlugin implements 
         }
     }
 
+    @Override
+    public void onPause(boolean multitasking) {
+        try {
+            super.onPause(multitasking);
+            this.barcodeListener.destroy();
+            ToughpadApi.destroy();
+        }
+        catch (RuntimeException e) {
+            Log.e(LOG_TAG  + "onPause", e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public void onResume(boolean multitasking) {
+
+        super.onResume(multitasking);
+
+        this.barcodeListener = new ToughpadApiBarcodeListener();
+
+        try {
+            ToughpadApi.initialize(this.cordova.getActivity().getApplicationContext(), this);
+        }
+        catch (RuntimeException e) {
+            Log.e(LOG_TAG + "onResume" , e.getMessage(), e);
+        }
+
+    }
 
 
     @Override
@@ -152,6 +179,7 @@ class  ToughpadApiBarcodeListener implements BarcodeListener {
 
     public void setCallBack(CallbackContext callback) {
         this.callback = callback;
+        Log.i(LOG_TAG, "CallBackContext=" + callback.toString());
     }
 	
 	/* Event fired when Barcode is scanned

@@ -15,3 +15,24 @@ PanasonicToughpadApi.onBarcodeRead('', function (res) {
     // error
 });
 ```
+
+#### Important
+With Version <= 1.0.3 parallel usage of the scan API in different Apps was not possible,
+With Versions > 2.0.0 parallel use is possible, but you have to re-set the event handler after resuming your App.
+
+
+``` 
+document.addEventListener("resume", this.onResume.bind(this), false);
+
+onResume: function () {
+
+    BarcodeScannerAPI.initAPI();
+
+}
+
+
+initAPI: function () {
+	PanasonicToughpadApi.onBarcodeRead(this._onBarcodeSuccess.bind(this));
+}
+
+``` 
